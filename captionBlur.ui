@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>captionBlur</class>
+ <widget class="QWidget" name="captionBlur">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>100</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>0</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>111111</width>
+    <height>111111</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>captionBlur</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="source.qrc">
+    <normaloff>:/resources/manualmode.png</normaloff>:/resources/manualmode.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QPushButton{
+	background-color: rgb(107, 107, 107);
+	border-radius:1px;
+}
+
+QPushButton:hover{
+	background-color: rgb(150, 150, 150);
+	
+}
+QPushButton:pressed{
+	background-color: rgb(115, 183, 255);
+}
+
+
+
+
+</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <property name="topMargin">
+    <number>1</number>
+   </property>
+   <property name="bottomMargin">
+    <number>1</number>
+   </property>
+   <item>
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>40</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <widget class="QPushButton" name="pb_start">
+     <property name="minimumSize">
+      <size>
+       <width>100</width>
+       <height>40</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+QPushButton{
+	background-color: rgb(145, 145, 145);
+	
+	font: 18pt &quot;微软雅黑&quot;;
+	
+	color: rgb(255, 255, 255);
+	border-radius:2px;
+	border-style:outset;
+	border-width:2px;
+	border-color:rgb(255,255,255);
+}
+
+QPushButton:hover{
+	background-color: rgb(180, 180, 180);
+	
+}
+QPushButton:pressed{
+	background-color: rgb(115, 183, 255);
+}
+
+
+
+
+</string>
+     </property>
+     <property name="text">
+      <string>开启</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <spacer name="horizontalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>40</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <widget class="QPushButton" name="pb_close">
+     <property name="minimumSize">
+      <size>
+       <width>100</width>
+       <height>40</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+QPushButton{
+	background-color: rgb(145, 145, 145);
+	
+	font: 18pt &quot;微软雅黑&quot;;
+	
+	color: rgb(255, 255, 255);
+	border-radius:2px;
+	border-style:outset;
+	border-width:2px;
+	border-color:rgb(255,255,255);
+}
+
+QPushButton:hover{
+	background-color: rgb(180, 180, 180);
+	
+}
+QPushButton:pressed{
+	background-color: rgb(115, 183, 255);
+}
+
+
+
+
+</string>
+     </property>
+     <property name="text">
+      <string>关闭</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <spacer name="horizontalSpacer_3">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>40</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="source.qrc"/>
+ </resources>
+ <connections/>
+</ui>

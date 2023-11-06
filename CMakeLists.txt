@@ -1,0 +1,70 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 3.11.0)
+
+PROJECT(CB)
+
+if(POLICY CMP0020)
+  cmake_policy(SET CMP0020 NEW)
+  cmake_policy(SET CMP0071 NEW)
+endif()
+
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTOUIC ON)
+    
+SET(CMAKE_INCLUDE_CURRENT_DIR ON)
+SET(CMAKE_CXX_STANDARD 20)
+
+FIND_PACKAGE(Qt5 COMPONENTS Core Gui SerialPort LinguistTools  Widgets Network REQUIRED)    
+INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR})
+
+FILE(GLOB SRC_FILES "./*.cpp")
+FILE(GLOB HEAD_FILES "./*.h")
+FILE(GLOB UI_FILES "./*.ui")
+
+SET(PROJECT_RESOURCE source.qrc)
+
+
+QT5_WRAP_UI(WRAP_FILES ${UI_FILES})
+QT5_WRAP_CPP(WRAP_SRCS_H ${HEARD_FILES})
+QT5_ADD_RESOURCES(PROJECT_RESOURCE_RCC ${PROJECT_RESOURCE})
+
+add_executable(CB MACOSX_BUNDLE
+			${SRC_FILES} 
+			${UI_FILES} 
+			${WRAP_FILES} 
+			${HEAD_FILES} 
+			${WRAP_SRCS_H} 
+			${PROJECT_RESOURCE_RCC} 
+			${PROJECT_RESOURCE}
+			)
+
+target_link_libraries(CB Qt5::Core Qt5::Gui Qt5::SerialPort Qt5::Widgets Qt5::Network)
+
+#---------���ɸѡ��----------------				  
+#source_group("ndicapi\\Source Files" FILES ${NDICAPI_SRC})
+source_group("Forms" FILES ${UI_FILES})
+
+#---------�Զ�����----------------		
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /Zi")
+SET_TARGET_PROPERTIES(${PROJECT_NAME} PROPERTIES COMPILE_FLAGS "/Od")
+SET_TARGET_PROPERTIES(${PROJECT_NAME} PROPERTIES LINK_FLAGS "/DEBUG")
+SET_PROPERTY(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT ${PROJECT_NAME})
+
+IF (WIN32)
+	if(MSVC)
+		OPTION(USE_MP "use multiple" ON)
+		OPTION(ProjectConfig_Global_COMPILE_FLAGS_WITH_MP 
+			"Set The Global Option COMPILE_FLAGS /MP to target." ON)
+		if(ProjectConfig_Global_COMPILE_FLAGS_WITH_MP OR USE_MP)
+			set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} /MP")
+			set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /MP")
+		endif()
+		#set(VS_STARTUP_PROJECT ${PROJECT_NAME})
+	ENDIF(MSVC)
+ENDIF()
+
+
+add_compile_definitions(NOMINMAX)
+add_definitions(/utf-8)
+
+#file(COPY ./bin/Release/library.dll DESTINATION ../build/Release)
+

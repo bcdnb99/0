@@ -1,0 +1,7 @@
+<RCC>
+  <qresource prefix="/">
+    <file>resources/icon.ico</file>
+    <file>resources/manualmode.png</file>
+    <file>qt/etc/qt.conf</file>
+  </qresource>
+</RCC>
