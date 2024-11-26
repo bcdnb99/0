@@ -2,7 +2,6 @@
 #include <QMetaType>
 #include <QSysInfo> 
 
-
 captionBlur::captionBlur(char **argv, QWidget *parent)
 {
 	ui.setupUi(this);
@@ -12,11 +11,7 @@ captionBlur::captionBlur(char **argv, QWidget *parent)
 	this->setWindowFlags(Qt::FramelessWindowHint);
 	this->setAttribute(Qt::WA_TranslucentBackground);
     this->setWindowFlags(this->windowFlags() | Qt::WindowStaysOnTopHint);
-	if (QSysInfo::productVersion().compare("10") != 0)
-	{
-		QApplication::setOverrideCursor(Qt::BlankCursor);
-	}
-    
+
 	initVariables();
 	initConnect();
     
@@ -26,7 +21,6 @@ captionBlur::captionBlur(char **argv, QWidget *parent)
 void captionBlur::initVariables()
 {
 	acryBackground = QColor(240, 240, 240, 150);
-	acryOpacity = 50;
 
     blurring = false;
 
@@ -69,7 +63,6 @@ void captionBlur::initConnect()
 void captionBlur::doAero()
 {
 	acryBackground = QColor(10, 10, 10, 20);
-	acryOpacity = 50;
 	auto hwnd = HWND(winId());
 	auto huser = GetModuleHandle("user32.dll");
 
@@ -77,6 +70,8 @@ void captionBlur::doAero()
 		setWindowCompositionAttribute = (pfnSetWindowCompositionAttribute)GetProcAddress(huser, "SetWindowCompositionAttribute");
 		if (setWindowCompositionAttribute) {
 			ACCENT_POLICY accent = { ACCENT_ENABLE_BLURBEHIND, 0, 0, 0 };
+            accent.GradientColor = (128 << 24) | 0x000000; // 半透明黑色，Alpha = 128
+
 			WINDOWCOMPOSITIONATTRIBDATA data;
 			data.Attrib = WCA_ACCENT_POLICY;
 			data.pvData = &accent;
@@ -86,13 +81,14 @@ void captionBlur::doAero()
 	}
     ui.pb_close->setVisible(0);
     ui.pb_start->setVisible(0);
+    ui.pb_close->setEnabled(0);
+    ui.pb_start->setEnabled(0);
     this->update();
 }
 
 void captionBlur::disableAero()
 {
 	acryBackground = QColor(240, 240, 240, 150);
-	acryOpacity = 50;
 	auto hwnd = HWND(winId());
 	auto huser = GetModuleHandle("user32.dll");
 
@@ -100,6 +96,7 @@ void captionBlur::disableAero()
 		setWindowCompositionAttribute = (pfnSetWindowCompositionAttribute)GetProcAddress(huser, "SetWindowCompositionAttribute");
 		if (setWindowCompositionAttribute) {
 			ACCENT_POLICY accent = { ACCENT_DISABLED, 0, 0, 0 };
+            
 			WINDOWCOMPOSITIONATTRIBDATA data;
 			data.Attrib = WCA_ACCENT_POLICY;
 			data.pvData = &accent;
@@ -110,10 +107,15 @@ void captionBlur::disableAero()
     if (blurring == true) {
         ui.pb_close->setVisible(0);
         ui.pb_start->setVisible(0);
+        ui.pb_close->setEnabled(0);
+        ui.pb_start->setEnabled(0);
     }
     else {
+        ui.pb_close->setEnabled(1);
+        ui.pb_start->setEnabled(1);
         ui.pb_close->setVisible(1);
         ui.pb_start->setVisible(1);
+        
     }
 }
 
@@ -362,6 +364,8 @@ bool captionBlur::eventFilter(QObject* watched, QEvent* event)
         }
         else if (event->type() == QEvent::MouseButtonDblClick && this->blurring == true){
             disableAero();
+            ui.pb_close->setEnabled(1);
+            ui.pb_start->setEnabled(1);
             ui.pb_close->setVisible(1);
             ui.pb_start->setVisible(1);
             this->blurring = false;

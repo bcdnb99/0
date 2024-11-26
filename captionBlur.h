@@ -22,6 +22,7 @@
 #include "ui_captionBlur.h"
 #include "WindowCompositionAttribute.h"
 
+
 class captionBlur : public QWidget
 {
 	Q_OBJECT
@@ -47,7 +48,6 @@ private:
 	pfnSetWindowCompositionAttribute setWindowCompositionAttribute;
 
 	QColor acryBackground;	//用来控制背景颜色
-	int acryOpacity;	//用来控制透明度
 
 	bool blurring;                  //处于模糊状态
 
@@ -89,8 +89,7 @@ private slots:
 protected:
 	void closeEvent(QCloseEvent* event);
 	void mouseDoubleClickEvent(QMouseEvent* event);
-	//void mousePressEvent(QMouseEvent* event);
-	//void mouseMoveEvent(QMouseEvent* event);
+
 	void paintEvent(QPaintEvent* event);
 	bool eventFilter(QObject* watched, QEvent* event);
 

@@ -1,23 +1,22 @@
 # CMake generation dependency list for this directory.
-C:/Program Files/CMake/share/cmake-3.24/Modules/CMakeCInformation.cmake
-C:/Program Files/CMake/share/cmake-3.24/Modules/CMakeCXXInformation.cmake
-C:/Program Files/CMake/share/cmake-3.24/Modules/CMakeCommonLanguageInclude.cmake
-C:/Program Files/CMake/share/cmake-3.24/Modules/CMakeGenericSystem.cmake
-C:/Program Files/CMake/share/cmake-3.24/Modules/CMakeInitializeConfigs.cmake
-C:/Program Files/CMake/share/cmake-3.24/Modules/CMakeLanguageInformation.cmake
-C:/Program Files/CMake/share/cmake-3.24/Modules/CMakeParseArguments.cmake
-C:/Program Files/CMake/share/cmake-3.24/Modules/CMakeRCInformation.cmake
-C:/Program Files/CMake/share/cmake-3.24/Modules/CMakeSystemSpecificInformation.cmake
-C:/Program Files/CMake/share/cmake-3.24/Modules/CMakeSystemSpecificInitialize.cmake
-C:/Program Files/CMake/share/cmake-3.24/Modules/Compiler/CMakeCommonCompilerMacros.cmake
-C:/Program Files/CMake/share/cmake-3.24/Modules/Compiler/MSVC-C.cmake
-C:/Program Files/CMake/share/cmake-3.24/Modules/Compiler/MSVC-CXX.cmake
-C:/Program Files/CMake/share/cmake-3.24/Modules/Compiler/MSVC.cmake
-C:/Program Files/CMake/share/cmake-3.24/Modules/Platform/Windows-MSVC-C.cmake
-C:/Program Files/CMake/share/cmake-3.24/Modules/Platform/Windows-MSVC-CXX.cmake
-C:/Program Files/CMake/share/cmake-3.24/Modules/Platform/Windows-MSVC.cmake
-C:/Program Files/CMake/share/cmake-3.24/Modules/Platform/Windows.cmake
-C:/Program Files/CMake/share/cmake-3.24/Modules/Platform/WindowsPaths.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/CMakeCInformation.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/CMakeCXXInformation.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/CMakeCommonLanguageInclude.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/CMakeGenericSystem.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/CMakeInitializeConfigs.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/CMakeLanguageInformation.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/CMakeParseArguments.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/CMakeRCInformation.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/CMakeSystemSpecificInformation.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/CMakeSystemSpecificInitialize.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/Compiler/CMakeCommonCompilerMacros.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/Compiler/MSVC-C.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/Compiler/MSVC-CXX.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/Platform/Windows-MSVC-C.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/Platform/Windows-MSVC-CXX.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/Platform/Windows-MSVC.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/Platform/Windows.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/Platform/WindowsPaths.cmake
 C:/Qt/Qt5.12.10/5.12.10/msvc2017_64/lib/cmake/Qt5/Qt5Config.cmake
 C:/Qt/Qt5.12.10/5.12.10/msvc2017_64/lib/cmake/Qt5/Qt5ConfigVersion.cmake
 C:/Qt/Qt5.12.10/5.12.10/msvc2017_64/lib/cmake/Qt5/Qt5ModuleLocation.cmake
@@ -57,8 +56,8 @@ C:/Qt/Qt5.12.10/5.12.10/msvc2017_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfigVersion
 C:/Qt/Qt5.12.10/5.12.10/msvc2017_64/lib/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake
 C:/Qt/Qt5.12.10/5.12.10/msvc2017_64/lib/cmake/Qt5Widgets/Qt5Widgets_QWindowsVistaStylePlugin.cmake
 D:/proj/captionBlur/CMakeLists.txt
-D:/proj/captionBlur/build/CMakeFiles/3.24.2/CMakeCCompiler.cmake
-D:/proj/captionBlur/build/CMakeFiles/3.24.2/CMakeCXXCompiler.cmake
-D:/proj/captionBlur/build/CMakeFiles/3.24.2/CMakeRCCompiler.cmake
-D:/proj/captionBlur/build/CMakeFiles/3.24.2/CMakeSystem.cmake
+D:/proj/captionBlur/build/CMakeFiles/3.20.2/CMakeCCompiler.cmake
+D:/proj/captionBlur/build/CMakeFiles/3.20.2/CMakeCXXCompiler.cmake
+D:/proj/captionBlur/build/CMakeFiles/3.20.2/CMakeRCCompiler.cmake
+D:/proj/captionBlur/build/CMakeFiles/3.20.2/CMakeSystem.cmake
 D:/proj/captionBlur/source.qrc

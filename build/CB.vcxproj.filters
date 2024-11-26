@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="D:\proj\captionBlur\build\CB_autogen\mocs_compilation_Debug.cpp">
       <Filter>Source Files</Filter>
@@ -40,6 +40,11 @@
     </CustomBuild>
     <CustomBuild Include="D:\proj\captionBlur\source.qrc" />
     <CustomBuild Include="D:\proj\captionBlur\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="D:\proj\captionBlur\icon.rc">
+      <Filter>Source Files</Filter>
+    </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Forms">

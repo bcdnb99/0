@@ -36,14 +36,18 @@ add_executable(CB MACOSX_BUNDLE
 			${PROJECT_RESOURCE_RCC} 
 			${PROJECT_RESOURCE}
 			)
+			
+if(WIN32)
+    set(APP_ICON_RESOURCE_WINDOWS "${CMAKE_SOURCE_DIR}/icon.rc")
+    target_sources(CB PRIVATE ${APP_ICON_RESOURCE_WINDOWS})
+endif()
 
-target_link_libraries(CB Qt5::Core Qt5::Gui Qt5::SerialPort Qt5::Widgets Qt5::Network)
+target_link_libraries(CB Qt5::Core Qt5::Gui Qt5::SerialPort Qt5::Widgets Qt5::Network user32 gdi32 dwmapi)
 
-#---------���ɸѡ��----------------				  
-#source_group("ndicapi\\Source Files" FILES ${NDICAPI_SRC})
+	  
 source_group("Forms" FILES ${UI_FILES})
 
-#---------�Զ�����----------------		
+
 SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /Zi")
 SET_TARGET_PROPERTIES(${PROJECT_NAME} PROPERTIES COMPILE_FLAGS "/Od")
 SET_TARGET_PROPERTIES(${PROJECT_NAME} PROPERTIES LINK_FLAGS "/DEBUG")
@@ -58,13 +62,10 @@ IF (WIN32)
 			set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} /MP")
 			set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /MP")
 		endif()
-		#set(VS_STARTUP_PROJECT ${PROJECT_NAME})
 	ENDIF(MSVC)
 ENDIF()
 
 
 add_compile_definitions(NOMINMAX)
 add_definitions(/utf-8)
-
-#file(COPY ./bin/Release/library.dll DESTINATION ../build/Release)
 
