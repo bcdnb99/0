@@ -10,6 +10,21 @@
 
 ![](动画.gif)
 
+Introduction: A subtitle blur software that keeps the subtitles blurred on the screen except in fullscreen mode. The blur effect will be removed when the mouse moves over the software window.
+
+Usage: This software is used for watching bilingual videos, where it blurs the translation while keeping the original subtitles visible.
+
+How to Use:
+
+Open the software.
+Drag the software window to the area you want to blur.
+Use the mouse to adjust the size.
+Click to enable the blur effect.
+
+How to exit:
+
+Double-click on the blurred area.
+Click close button on the software.
 
 #编译环境
 
